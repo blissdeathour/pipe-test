@@ -2,11 +2,19 @@ pipeline {
     agent any
 
     stages {
+        stage('Clone') {
+            steps {
+                sh 'echo \"cloned\"'
+            }
+        }
         stage('Build') {
             steps {
-                // Get some code from a GitHub repository
-                git 'https://github.com/blissdeathour/pipe-test'
-
+                sh 'echo \"builded\"'
+            }
+        }
+        stage('Test') {
+            steps {
+                sh 'echo \"tested\"'
             }
         }
     }
